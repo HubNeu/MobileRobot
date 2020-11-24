@@ -1,1 +1,0 @@
-<p><?= $this->body['zmienna'] ?></p>
