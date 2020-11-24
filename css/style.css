@@ -1,0 +1,24 @@
+.nav
+{
+    height: 36px;
+    background-color: white;
+}
+
+.nav:disabled
+{
+    background-color: lightgray;
+}
+
+.icon
+{
+    width: 20px;
+    height: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#image
+{
+    width: 720px;
+    height: 480px;
+}
