@@ -1,24 +1,49 @@
-.nav
+body
+{
+
+}
+
+#container
+{
+
+}
+
+#main
+{
+
+}
+
+#stream
+{
+
+}
+
+#stream-box
+{
+    width: 720px;
+    height: 480px;
+}
+
+#stream-nav
+{
+
+}
+
+.nav-stream
 {
     height: 36px;
     background-color: white;
 }
 
-.nav:disabled
+.nav-stream:disabled
 {
     background-color: lightgray;
 }
 
-.icon
+.icon-nav-stream
 {
     width: 20px;
     height: 20px;
     display: table-cell;
     vertical-align: middle;
-}
-
-#image
-{
-    width: 720px;
-    height: 480px;
 }

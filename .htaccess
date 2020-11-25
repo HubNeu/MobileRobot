@@ -1,10 +1,10 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !css/style.css
 RewriteCond %{REQUEST_FILENAME} !js/jquery.min.js
-RewriteCond %{REQUEST_FILENAME} !js/streaming.js
-RewriteCond %{REQUEST_FILENAME} !php/streaming.php
-RewriteCond %{REQUEST_FILENAME} !img/diploma.png
-RewriteCond %{REQUEST_FILENAME} !img/politechnika.jpg
-RewriteCond %{REQUEST_FILENAME} !img/play.png
-RewriteCond %{REQUEST_FILENAME} !img/stop.png
+RewriteCond %{REQUEST_FILENAME} !js/ajax.js
+RewriteCond %{REQUEST_FILENAME} !php/processing.php
+RewriteCond %{REQUEST_FILENAME} !img/diploma-icon.png
+RewriteCond %{REQUEST_FILENAME} !img/screensaver-stream.jpg
+RewriteCond %{REQUEST_FILENAME} !img/play-stream.png
+RewriteCond %{REQUEST_FILENAME} !img/stop-stream.png
 RewriteRule ^(.+)$ index.php?q=$1 [QSA,L]

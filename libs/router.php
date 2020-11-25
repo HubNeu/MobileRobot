@@ -10,7 +10,7 @@ class Router
         $length = strlen($_GET['q']);
 
         if ($_GET['q'][$length-1] == '/')
-            $path = '../';
+            $path .= '../';
 
         $q = rtrim($_GET['q'], '/');
         $params = explode('/', $q);
@@ -24,7 +24,7 @@ class Router
         }
 
         if ($params[0] == 'index.php')
-            $params[0] = 'start'; //TODO ustawić domyślny kontroler
+            $params[0] = 'start'; //TODO default controller
 
         $file = 'controllers/' . $params[0] . '.php';
 
@@ -39,24 +39,24 @@ class Router
             else
             {
                 $view = new View();
-                $view->controller = 'common';
-                $view->page = 'error';
-                $view->body['externalError'][] = 404;
-                $view->body['internalError'][] = 'File: ' . __FILE__ . '<br>' .
+                $view->body['internalError'][0] = 'File: ' . __FILE__ . '<br>' .
                     'Method: ' . __METHOD__ . '<br>' .
                     'Details: class "' . $controller . '" does not exist';
-                $view->render();
             }
         }
         else
         {
             $view = new View();
-            $view->controller = 'common';
-            $view->page = 'error';
-            $view->body['externalError'][] = 404;
-            $view->body['internalError'][] = 'File: ' . __FILE__ . '<br>' .
+            $view->body['internalError'][0] = 'File: ' . __FILE__ . '<br>' .
                 'Method: ' . __METHOD__ . '<br>' .
                 'Details: file "' . $file . '" does not exist';
+        }
+
+        if (!isset($request))
+        {
+            $view->controller = 'common';
+            $view->page = 'error';
+            $view->body['externalError'][0] = 404;
             $view->render();
         }
     }

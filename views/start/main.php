@@ -1,7 +1,9 @@
 <div id="main">
-    <img id="image" src="<?= $path ?>img/politechnika.jpg">
-</div>
-<div id="nav">
-    <button id="play" class="nav" onclick="play()"><img class="icon" src="<?= $path ?>img/play.png"></button>
-    <button id="stop" class="nav" onclick="stop()" disabled><img class="icon" src="<?= $path ?>img/stop.png"></button>
+    <div id="stream">
+        <img id="stream-box">
+        <div id="stream-nav">
+            <button id="play-stream" class="nav-stream" onclick="switch_stream()"><img class="icon-nav-stream" src="<?= $path ?>img/play-stream.png"></button>
+            <button id="stop-stream" class="nav-stream" onclick="switch_stream()"><img class="icon-nav-stream" src="<?= $path ?>img/stop-stream.png"></button>
+        </div>
+    </div>
 </div>

@@ -16,9 +16,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Praca inżynierska</title> <!-- TODO jw. -->
 	<link rel="stylesheet" href="<?= $path ?>css/style.css?<?= mt_rand(); ?>">
-	<link rel="Shortcut icon" href="<?= $path ?>img/diploma.png">
+	<link rel="Shortcut icon" href="<?= $path ?>img/diploma-icon.png">
 	<script src="<?= $path ?>js/jquery.min.js"></script>
-	<script type="text/javascript">
+	<script>
 		<?= 'let path = "' . $path . '";'; ?>
 	</script>
 </head>

@@ -1,5 +1,5 @@
-const image = document.getElementById('image');
-let state = false;
+const stream = document.getElementById('stream-box');
+let state;
 
 async function sendRequest(method, url)
 {
@@ -36,38 +36,32 @@ async function sendRequest(method, url)
 
 const streaming = async () =>
 {
+    if (state == null)
+        state = await sendRequest('GET', path + 'php/processing.php?streaming=state');
+    
     if (state)
     {
-        await sendRequest('GET', path + 'php/streaming.php?q=on');
-        image.src = 'http://192.168.43.95:8081';
+        let ip = await sendRequest('GET', path + 'php/processing.php?streaming=on');
+        stream.src = ip;
+
+        $('#play-stream').prop('disabled', true);
+        $('#stop-stream').prop('disabled', false);
     }
     else
     {
-        await sendRequest('GET', path + 'php/streaming.php?q=off');
-        image.src = path + 'img/politechnika.jpg';
+        await sendRequest('GET', path + 'php/processing.php?streaming=off');
+        stream.src = path + 'img/screensaver-stream.jpg';
+
+        $('#stop-stream').prop('disabled', true);
+        $('#play-stream').prop('disabled', false);
     }
 }
 
-function play()
+function switch_stream()
 {
-    if (!state)
-    {
-        state = true;
-        streaming();
-
-        $('#play').prop('disabled', true);
-        $('#stop').prop('disabled', false);
-    }
+    state = !state;
+    streaming();
 }
 
-function stop()
-{
-    if (state)
-    {
-        state = false;
-        streaming();
-
-        $('#stop').prop('disabled', true);
-        $('#play').prop('disabled', false);
-    }
-}
+if (stream != null)
+    streaming();
