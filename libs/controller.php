@@ -29,7 +29,7 @@ class Controller
             if (class_exists($model))
                 $this->model = new $model();
             else
-                $view->body['internalError'][0] = 'Details: class "' . $model . '" does not exist';
+                $view->body['internalError'][0] = 'Details: class "' . $model . '" does not exist in file "' . $file . '"';
         }
         else
             $view->body['internalError'][0] = 'Details: file "' . $file . '" does not exist';

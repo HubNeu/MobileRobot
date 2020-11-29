@@ -12,15 +12,12 @@ class Start extends Controller
         {
             if (method_exists(ucfirst($this->controller), $this->page))
             {
-                $view->controller = $this->controller;
-                $view->page = $this->page;
-
                 $action = $this->page;
                 $this->$action();
             }
             else
             {
-                $view->body['internalError'][0] = 'Details: function "' . $this->page . '()" does not exist' .
+                $view->body['internalError'][0] = 'Details: method "' . $this->page . '()" does not exist in file "controllers/' . $this->controller . '.php"' .
                     '<br>File: ' . __FILE__ .
                     '<br>Method: ' . __METHOD__;
                 $view->body['externalError'][0] = 404;
@@ -31,6 +28,25 @@ class Start extends Controller
     private function main()
     {
         global $view;
-        $view->body['message'] = $this->model->sampleMethod();
+
+        $model = ucfirst($this->controller) . '_model';
+        $method = 'sampleMethod';
+
+        if (method_exists($model, $method))
+            $view->body['message'] = $this->model->$method();
+        else
+        {
+            $error = true;
+            $view->body['internalError'][0] = 'Details: method "' . $method . '()" does not exist in file "models/' . $this->controller . '_model.php"' .
+                '<br>File: ' . __FILE__ .
+                '<br>Method: ' . __METHOD__;
+            $view->body['externalError'][0] = 404;
+        }
+
+        if (!isset($error))
+        {
+            $view->controller = $this->controller;
+            $view->page = $this->page;
+        }
     }
 }

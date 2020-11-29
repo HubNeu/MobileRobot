@@ -9,6 +9,6 @@ class Start_model extends Model
 
     public function sampleMethod()
     {
-        return 'sampleMethod';
+        return 'Jestem w metodzie sampleMehod()';
     }
 }

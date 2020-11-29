@@ -28,17 +28,19 @@ class Router
         if ($params[0] == 'index.php')
             $params[0] = $DEFAULT_CONTROLLER;
 
-        $controller = ucfirst($params[0]);
+        $controller = $params[0];
         $file = 'controllers/' . $controller . '.php';
 
         if (file_exists($file))
         {
             require_once $file;
 
+            $controller = ucfirst($controller);
+
             if (class_exists($controller))
                 $request = new $controller($params);
             else
-                $view->body['internalError'][0] = 'Details: class "' . $controller . '" does not exist';
+                $view->body['internalError'][0] = 'Details: class "' . $controller . '" does not exist in file "' . $file . '"';
         }
         else
             $view->body['internalError'][0] = 'Details: file "' . $file . '" does not exist';
