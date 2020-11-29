@@ -15,10 +15,10 @@ if (file_exists($this->body['errorForwarding']))
     require_once $this->body['errorForwarding'];
 else
 {
+    $this->body['internalError'][0] = 'Details: file "' . $this->body['errorForwarding'] . '" does not exist';
+        '<br>File: ' . __FILE__;
     $this->body['externalError'][0] = 404;
     $this->body['errorMessage'][0] = 'Page not found';
-    $this->body['internalError'][0] = 'File: ' . __FILE__ . '<br>' .
-        'Details: file "' . $this->body['errorForwarding'] . '" does not exist';
 
     echo '<pre>Error ' . $this->body['externalError'][0] . '</pre>
         <pre>' . $this->body['errorMessage'][0] . '</pre>

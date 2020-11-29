@@ -4,9 +4,11 @@ class Router
 {
     function __construct()
     {
+        global $DEFAULT_CONTROLLER;
+        global $view;
         global $path;
-        $path = '';
 
+        $path = '';
         $length = strlen($_GET['q']);
 
         if ($_GET['q'][$length-1] == '/')
@@ -24,40 +26,28 @@ class Router
         }
 
         if ($params[0] == 'index.php')
-            $params[0] = 'start'; //TODO default controller
+            $params[0] = $DEFAULT_CONTROLLER;
 
-        $file = 'controllers/' . $params[0] . '.php';
+        $controller = ucfirst($params[0]);
+        $file = 'controllers/' . $controller . '.php';
 
         if (file_exists($file))
         {
             require_once $file;
 
-            $controller = ucfirst($params[0]);
-
             if (class_exists($controller))
                 $request = new $controller($params);
             else
-            {
-                $view = new View();
-                $view->body['internalError'][0] = 'File: ' . __FILE__ . '<br>' .
-                    'Method: ' . __METHOD__ . '<br>' .
-                    'Details: class "' . $controller . '" does not exist';
-            }
+                $view->body['internalError'][0] = 'Details: class "' . $controller . '" does not exist';
         }
         else
-        {
-            $view = new View();
-            $view->body['internalError'][0] = 'File: ' . __FILE__ . '<br>' .
-                'Method: ' . __METHOD__ . '<br>' .
-                'Details: file "' . $file . '" does not exist';
-        }
+            $view->body['internalError'][0] = 'Details: file "' . $file . '" does not exist';
 
         if (!isset($request))
         {
-            $view->controller = 'common';
-            $view->page = 'error';
+            $view->body['internalError'][0] .= '<br>File: ' . __FILE__ .
+                '<br>Method: ' . __METHOD__;
             $view->body['externalError'][0] = 404;
-            $view->render();
         }
     }
 }

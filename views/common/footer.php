@@ -1,4 +1,4 @@
     </div>
-    <script src="<?= $path ?>js/ajax.js?<?= mt_rand(); ?>"></script>
+    <script src="<?= $path ?>js/streaming.js?<?= mt_rand(); ?>"></script>
 </body>
 </html>

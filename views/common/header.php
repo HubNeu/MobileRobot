@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="<?= $path ?>css/style.css?<?= mt_rand(); ?>">
 	<link rel="Shortcut icon" href="<?= $path ?>img/diploma-icon.png">
 	<script src="<?= $path ?>js/jquery.min.js"></script>
+	<script src="<?= $path ?>js/ajax.js"></script>
 	<script>
 		<?= 'let path = "' . $path . '";'; ?>
 	</script>
