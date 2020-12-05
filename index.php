@@ -1,12 +1,12 @@
 <?php
 
-$DEFAULT_CONTROLLER = 'start';
-$DEFAULT_PAGE['start'] = 'main';
+$DEFAULT_CONTROLLER = 'dashboard';
+$DEFAULT_PAGE['dashboard'] = 'panel';
 
-require_once 'libs/router.php';
-require_once 'libs/controller.php';
-require_once 'libs/model.php';
-require_once 'libs/view.php';
+require_once 'mvc/router.php';
+require_once 'mvc/controller.php';
+require_once 'mvc/model.php';
+require_once 'mvc/view.php';
 
 $view = new View;
 $router = new Router;

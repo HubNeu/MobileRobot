@@ -1,3 +1,3 @@
 # MobileRobot
 
-Inżynierka
+Praca inżynierska

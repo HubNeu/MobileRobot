@@ -1,11 +1,22 @@
 body
 {
-
+    background-color: silver;
 }
 
 #container
 {
 
+}
+
+#shutdown
+{
+	margin-left: 98%;
+}
+
+#shutdown-icon
+{
+    width: 20px;
+    height: 20px;
 }
 
 #main
@@ -18,7 +29,7 @@ body
 
 }
 
-#message
+#text
 {
 
 }
@@ -45,7 +56,7 @@ body
     background-color: lightgray;
 }
 
-.icon-nav-stream
+.nav-stream-icon
 {
     width: 20px;
     height: 20px;

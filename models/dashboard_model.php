@@ -1,6 +1,6 @@
 <?php
 
-class Start_model extends Model
+class Dashboard_model extends Model
 {
     function __construct()
     {

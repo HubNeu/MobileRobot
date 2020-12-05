@@ -4,18 +4,33 @@ session_start();
 
 if (isset($_GET['streaming']))
 {
-    if ($_GET['streaming'] == 'state')
+    switch ($_GET['streaming'])
     {
-        if (!isset($_SESSION['STATE-CAMERA']))
-            $_SESSION['STATE-CAMERA'] = true;
-
-        echo $_SESSION['STATE-CAMERA'];
+        case 'status':
+            if (!isset($_SESSION['CAMERA-STATUS']))
+                $_SESSION['CAMERA-STATUS'] = true;
+            break;
+        case 'on':
+            $_SESSION['CAMERA-STATUS'] = true;
+            break;
+        case 'off':
+            $_SESSION['CAMERA-STATUS'] = false;
+            break;
     }
-    else if ($_GET['streaming'] == 'on')
+
+    if ($_SESSION['CAMERA-STATUS'])
     {
-        $_SESSION['STATE-CAMERA'] = true;
+        shell_exec('sudo bash ../bash/streaming_on.sh');
+        sleep(3);
         echo 'http://192.168.43.95:8081';
     }
-    else if ($_GET['streaming'] == 'off')
-        $_SESSION['STATE-CAMERA'] = false;
+    else
+    {
+        shell_exec('sudo bash ../bash/streaming_off.sh');
+        sleep(3);
+        echo 'OFF';
+    }
 }
+else if (isset($_GET['shutdown']) && $_GET['shutdown'] == 'true')
+	shell_exec('sudo bash ../bash/shutdown.sh');
+
