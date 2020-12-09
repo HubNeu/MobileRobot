@@ -12,8 +12,13 @@ class Router
         $path = '';
         $length = strlen($_GET['q']);
 
-        if ($_GET['q'][$length-1] == '/')
-            $path .= '../';
+        for ($i=$length-1; $i>=0; $i--)
+        {
+            if ($_GET['q'][$i] == '/')
+                $path .= '../';
+            else
+                break;
+        }
 
         $q = rtrim($_GET['q'], '/');
         $params = explode('/', $q);

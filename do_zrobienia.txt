@@ -1,0 +1,8 @@
+Hubert:
+- poszukanie lepszych grafik (loga, ikony, zdjęcia), ważne żeby były na prawach do wykorzystania w projektach komercyjnych (ja takich oczywiście nie użyłem, dlatego trzeba je wszystkie pozamieniać)
+- zrobienie frontend panelu głównego w nim m.in. (3 wydzielone części ekranu do: streamingu, mapy otoczenia, trajektorii ruchu robota; fajnie jakby dało się zmieniać rozmiar tych części, żeby np. jedną powiększyć na cały ekran, albo na pół ekranu i pozostałe po 25% itd.), joysticki do sterowania robotem oraz wieżyczką, podstawowa nawigacja strony, przyciski do play, stop streamingu oraz generowania trajektorii ruchu robota i mapy otoczenia, oddzielna strona do ustawienia różnych parametrów na stronie, jak chociażby rozdzielczość streamingu, ip malinki i innych danych które będą siedzieć w bazie danych, pole na statystyki robota
+
+- jeżeli wystarczy czasu to panel tworzenia nowych kont i edycji istniejących
+
+Oskar:
+- jeżeli wystarczy czasu to przypomnienie hasła i panel tworzenia nowych kont i edycji istniejących (coś jak u Bernata)

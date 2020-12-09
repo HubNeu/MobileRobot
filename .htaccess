@@ -7,8 +7,11 @@ RewriteCond %{REQUEST_FILENAME} !js/jquery.min.js
 RewriteCond %{REQUEST_FILENAME} !js/bootstrap.bundle.min.js
 RewriteCond %{REQUEST_FILENAME} !js/ajax.js
 RewriteCond %{REQUEST_FILENAME} !js/streaming.js
+RewriteCond %{REQUEST_FILENAME} !js/login.js
 RewriteCond %{REQUEST_FILENAME} !php/processing.php
+RewriteCond %{REQUEST_FILENAME} !php/logout.php
 RewriteCond %{REQUEST_FILENAME} !img/diploma-icon.png
+RewriteCond %{REQUEST_FILENAME} !img/logout-icon.png
 RewriteCond %{REQUEST_FILENAME} !img/shutdown-icon.png
 RewriteCond %{REQUEST_FILENAME} !img/play-icon.png
 RewriteCond %{REQUEST_FILENAME} !img/stop-icon.png

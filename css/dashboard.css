@@ -8,16 +8,28 @@ body
 
 }
 
-#shutdown
+#nav
 {
-    margin-left: 97%;
+    margin-left: 94%;
     margin-top: 1%;
 }
 
-#shutdown-icon
+#logout
+{
+
+}
+
+#shutdown
+{
+    
+}
+
+.nav-icon
 {
     width: 20px;
     height: 20px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #main

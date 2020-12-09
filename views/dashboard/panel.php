@@ -1,5 +1,8 @@
 
-        <button id="shutdown" onclick="shutdown()"><img id="shutdown-icon" src="<?= $path ?>img/shutdown-icon.png"></button>
+        <div id="nav">
+            <a href="<?= $path ?>php/logout.php"><button id="logout"><img id="logout-icon" class="nav-icon" src="<?= $path ?>img/logout-icon.png"></button></a>
+            <button id="shutdown" onclick="shutdown()"><img id="shutdown-icon" class="nav-icon" src="<?= $path ?>img/shutdown-icon.png"></button>
+        </div>
         <div id="main">
             <div id="stream">
                 <img id="stream-box" src="<?= $path ?>img/screensaver-image.jpg">

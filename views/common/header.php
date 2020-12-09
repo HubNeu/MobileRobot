@@ -1,4 +1,4 @@
-<?php global $path; ?>
+<?php require_once 'php/forwarding.php'; ?>
 <!DOCTYPE html>
 <!--
         AUTHOR
