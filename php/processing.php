@@ -33,20 +33,20 @@ if (isset($_GET['streaming']))
 }
 else if (isset($_GET['shutdown']) && $_GET['shutdown'] == 'true')
     shell_exec('sudo bash ../bash/shutdown.sh');
-else if (isset($_GET['login']) || isset($_GET['password']))
+else if (isset($_POST['login']) || isset($_POST['password']))
 {
     $status = '';
 
-    if (isset($_GET['login']) && $_GET['login'] != '' && isset($_GET['password']) && $_GET['password'] != '')
+    if (isset($_POST['login']) && $_POST['login'] != '' && isset($_POST['password']) && $_POST['password'] != '')
     {
         require_once '../mvc/model.php';
 
         $model = new Model();
-        $query = $model->select('id, name, surname, password, status, permissions', 'users', 'login="'.$_GET['login'].'"', false);
+        $query = $model->select('id, name, surname, password, status, permissions', 'users', 'login="'.$_POST['login'].'"', false);
 
         if ($query)
         {
-            if (password_verify($_GET['password'], $query['password']))
+            if (password_verify($_POST['password'], $query['password']))
             {
                 $_SESSION['user_id'] = $query['id'];
                 $_SESSION['user_name'] = $query['name'] . ' ' . $query['surname'];
@@ -64,10 +64,10 @@ else if (isset($_GET['login']) || isset($_GET['password']))
     }
     else
     {
-        if (!isset($_GET['login']) || isset($_GET['login']) && $_GET['login'] == '')
+        if (!isset($_POST['login']) || $_POST['login'] == '')
             $status += 'emptyLogin';
 
-        if (!isset($_GET['password']) || isset($_GET['password']) && $_GET['password'] == '')
+        if (!isset($_POST['password']) || $_POST['password'] == '')
             $status += 'emptyPassword';
     }
 

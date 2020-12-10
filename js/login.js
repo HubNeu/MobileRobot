@@ -19,7 +19,7 @@ const signIn = async () =>
         status += 'emptyPassword';
 
     if (status == '')
-        status = await sendRequest('GET', path + 'php/processing.php?login=' + login.value + '&password=' + password.value);
+        status = await sendRequest('POST', path + 'php/processing.php', 'login=' + login.value + '&password=' + password.value);
 
     if (status == 'confirmed')
         location.href = website;

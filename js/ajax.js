@@ -1,7 +1,13 @@
-async function sendRequest(method, url)
+async function sendRequest(method, url, data = null)
 {
     return new Promise(function (resolve, reject)
     {
+        if (method == 'GET')
+        {
+            url += '?' + data;
+            data = null;
+        }
+
         let xhr = new XMLHttpRequest();
 
         xhr.open(method, url);
@@ -27,6 +33,9 @@ async function sendRequest(method, url)
             });
         };
 
-        xhr.send();
+        if (method == 'POST')
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        xhr.send(data);
     });
 }

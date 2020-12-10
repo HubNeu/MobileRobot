@@ -5,7 +5,7 @@ const streaming = async () =>
 {
 	if (status == null)
 	{
-        state = await sendRequest('GET', path + 'php/processing.php?streaming=status');
+        state = await sendRequest('GET', path + 'php/processing.php', 'streaming=status');
 
 		if (state != 'OFF')
 		{
@@ -22,7 +22,7 @@ const streaming = async () =>
     else if (status)
     {
 		$('#play-stream').prop('disabled', true);
-		state = await sendRequest('GET', path + 'php/processing.php?streaming=on');
+		state = await sendRequest('GET', path + 'php/processing.php', 'streaming=on');
 		stream.src = state;
 		$('#stop-stream').prop('disabled', false);
     }
@@ -30,7 +30,7 @@ const streaming = async () =>
     {
 		$('#stop-stream').prop('disabled', true);
 		stream.src = path + 'img/screensaver-image.jpg';
-		await sendRequest('GET', path + 'php/processing.php?streaming=off');
+		await sendRequest('GET', path + 'php/processing.php', 'streaming=off');
 		$('#play-stream').prop('disabled', false);
     }
 }
@@ -43,7 +43,7 @@ function switch_stream()
 
 function shutdown()
 {
-    sendRequest('GET', path + 'php/processing.php?shutdown=true');
+    sendRequest('GET', path + 'php/processing.php', 'shutdown=true');
 }
 
 if (stream != null)
