@@ -14,3 +14,4 @@ unset($_SESSION['user_permissions']);
 unset($_SESSION['website']);
 
 header('Location: ../login');
+exit();

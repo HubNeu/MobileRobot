@@ -20,19 +20,19 @@ if (isset($_GET['streaming']))
 
     if ($_SESSION['CAMERA-STATUS'])
     {
-        shell_exec('sudo bash ../bash/streaming_on.sh');
-        sleep(3);
+        shell_exec('sudo motion');
+	shell_exec('sudo systemctl start motion.service');
+        usleep(100000);
         echo 'http://192.168.43.95:8081';
     }
     else
     {
-        shell_exec('sudo bash ../bash/streaming_off.sh');
-        sleep(3);
+        shell_exec('sudo systemctl stop motion.service');
         echo 'OFF';
     }
 }
 else if (isset($_GET['shutdown']) && $_GET['shutdown'] == 'true')
-    shell_exec('sudo bash ../bash/shutdown.sh');
+    shell_exec('sudo halt');
 else if (isset($_POST['login']) || isset($_POST['password']))
 {
     $status = '';

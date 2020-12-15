@@ -43,7 +43,8 @@ function switch_stream()
 
 function shutdown()
 {
-    sendRequest('GET', path + 'php/processing.php', 'shutdown=true');
+	sendRequest('GET', path + 'php/processing.php', 'shutdown=true');
+	location.href='php/logout.php';
 }
 
 if (stream != null)

@@ -13,6 +13,10 @@
             case 'login':
                 echo '<script src="' . $path . 'js/login.js?' . mt_rand() . '"></script>';
                 break;
+	    case 'orientation':
+		echo '<script src="' . $path . 'js/three.min.js"></script>';
+		echo '<script src="' . $path . 'js/orientation.js?' . mt_rand() . '"></script>';
+		break;
         }
     ?>
 </body>

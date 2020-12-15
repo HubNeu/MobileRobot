@@ -11,8 +11,8 @@ class Model
     function __construct()
     {
         $this->server = 'localhost';
-        $this->login = 'root';
-        $this->password = '';
+        $this->login = 'BolleyVall7';
+        $this->password = 'V0lleyball7';
         $this->database = 'mobile_robot';
 
         $this->connect();
