@@ -8,11 +8,11 @@ class Model
     private $database;
     private $pdo;
 
-    function __construct()
+    public function __construct()
     {
         $this->server = 'localhost';
-        $this->login = 'BolleyVall7';
-        $this->password = 'V0lleyball7';
+        $this->login = 'root';
+        $this->password = '';
         $this->database = 'mobile_robot';
 
         $this->connect();
@@ -24,12 +24,9 @@ class Model
         $db = "mysql:host={$this->server}; dbname={$this->database}; charset=utf8";
         $options = [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 
-        try
-        {
+        try {
             $this->pdo = new PDO($db, $this->login, $this->password, $options);
-        }
-        catch (PDOException $e)
-        {
+        } catch (PDOException $e) {
             $view->body['errorNumber'] = 1;
         }
     }
@@ -38,16 +35,18 @@ class Model
     {
         $query = 'SELECT ' . $select . ' FROM ' . $from;
 
-        if ($where != null)
+        if ($where != null) {
             $query .= ' WHERE ' . $where;
+        }
 
         $selectQuery = $this->pdo->prepare($query);
         $selectQuery->execute();
 
-        if ($fetchAll)
+        if ($fetchAll) {
             $select = $selectQuery->fetchAll();
-        else
+        } else {
             $select = $selectQuery->fetch();
+        }
 
         return $select;
     }

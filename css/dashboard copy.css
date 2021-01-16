@@ -64,7 +64,6 @@ body
 .modal-entry
 {
     height: 20px;
-    margin-right: 5px;
 }
 
 .nav-project-icon-left
@@ -130,13 +129,10 @@ body
 
 .image
 {
-    clear: both;
-    max-width: auto;
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     height: auto;
     margin: auto;
-    border-top: 1px solid #555555;
-    border-right: 1px solid #555555;
 }
 
 .stream-background
@@ -146,36 +142,16 @@ body
 
 .env-map-field
 {
-    width: 20%;
+    width: 100%;
     height: 300px;
     background-color: black;
-    float:right;
 }
 
 .nipple-field
 {
     width: 20%;
     height: 300px;
-    background-color: #0057ff;
+    background-color: red;
     position: relative;
     left: 80%;
 }
-
-/*  404 page stylization  */
-
-.error-template {
-    padding: 40px 15px;
-    text-align: center;
-}
-
-.error-actions {
-    margin-top:15px;
-    margin-bottom:15px;
-}
-
-.error-actions .btn 
-{
-    margin-right:10px; 
-}
-
-/*  End of 404 page stylization  */
