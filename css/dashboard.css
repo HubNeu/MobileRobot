@@ -1,0 +1,181 @@
+body
+{
+    background-color: #EFEFEF;  
+    /*  for disabling scrollbars both visibly and functionally
+    (just visibly doesn't work)
+    */
+    overflow: hidden;
+}
+
+.container-fluid
+{
+    padding: 0;
+}
+
+.nav-container
+{
+    background-color: #CDCDCD;
+    vertical-align: middle;
+    display: flex;
+}
+
+.nav-icon
+{
+    width: 20px;
+    height: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nav-stream
+{
+    height: 40px;
+    width: auto;
+    background-color: white;
+}
+
+.nav-stream:disabled
+{
+    background-color: lightgray;
+}
+
+.nav-stream-icon
+{
+    width: 20px;
+    height: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nav-project-icon
+{
+    height: auto;
+    width: 40px;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.nav-menu-icon
+{
+    width: 20px;
+    height: 20px;
+}
+
+.modal-entry
+{
+    height: 20px;
+    margin-right: 5px;
+}
+
+.nav-project-icon-left
+{
+    height: auto;
+    width: 56px;
+    vertical-align: middle;
+    float: left;
+    padding-left: 5px;
+}
+
+.nav-menu-buttons
+{
+    display: table-cell;
+}
+
+.nav-left
+{
+    float: left;
+    width: 500px;
+}
+
+.nav-right
+{
+    align-self: center;
+    margin-left: auto;
+    border: 1px;
+    
+}
+
+.button-float
+{
+    float: left;
+}
+
+.stream-outer-container
+{
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: darkcyan;
+}
+
+.stream-container
+{
+    width: 80%;
+    float: left;
+}
+
+.stream-panel
+{
+    background-color: #EFEFEF;
+}
+
+.stream-nav-button
+{
+    clear: both;
+    height: 50px;
+    width: 20%;
+    background-color: #FFFFFF;
+}
+
+.image
+{
+    clear: both;
+    max-width: auto;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-top: 1px solid #555555;
+    border-right: 1px solid #555555;
+}
+
+.stream-background
+{
+    margin: auto;
+}
+
+.env-map-field
+{
+    width: 20%;
+    height: 300px;
+    background-color: black;
+    float:right;
+}
+
+.nipple-field
+{
+    width: 20%;
+    height: 300px;
+    background-color: #0057ff;
+    position: relative;
+    left: 80%;
+}
+
+/*  404 page stylization  */
+
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.error-actions {
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.error-actions .btn 
+{
+    margin-right:10px; 
+}
+
+/*  End of 404 page stylization  */

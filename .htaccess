@@ -1,10 +1,21 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !css/style.css
+RewriteCond %{REQUEST_FILENAME} !css/bootstrap.min.css
+RewriteCond %{REQUEST_FILENAME} !css/dashboard.css
+RewriteCond %{REQUEST_FILENAME} !css/login.min.css
 RewriteCond %{REQUEST_FILENAME} !js/jquery.min.js
+RewriteCond %{REQUEST_FILENAME} !js/bootstrap.bundle.min.js
+RewriteCond %{REQUEST_FILENAME} !js/three.min.js
+RewriteCond %{REQUEST_FILENAME} !js/ajax.js
 RewriteCond %{REQUEST_FILENAME} !js/streaming.js
-RewriteCond %{REQUEST_FILENAME} !php/streaming.php
-RewriteCond %{REQUEST_FILENAME} !img/diploma.png
-RewriteCond %{REQUEST_FILENAME} !img/politechnika.jpg
-RewriteCond %{REQUEST_FILENAME} !img/play.png
-RewriteCond %{REQUEST_FILENAME} !img/stop.png
+RewriteCond %{REQUEST_FILENAME} !js/login.js
+RewriteCond %{REQUEST_FILENAME} !js/orientation.js
+RewriteCond %{REQUEST_FILENAME} !php/processing.php
+RewriteCond %{REQUEST_FILENAME} !php/orientation.php
+RewriteCond %{REQUEST_FILENAME} !php/logout.php
+RewriteCond %{REQUEST_FILENAME} !img/diploma-icon.png
+RewriteCond %{REQUEST_FILENAME} !img/logout-icon.png
+RewriteCond %{REQUEST_FILENAME} !img/shutdown-icon.png
+RewriteCond %{REQUEST_FILENAME} !img/play-icon.png
+RewriteCond %{REQUEST_FILENAME} !img/stop-icon.png
+RewriteCond %{REQUEST_FILENAME} !img/screensaver-image.jpg
 RewriteRule ^(.+)$ index.php?q=$1 [QSA,L]
